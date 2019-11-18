@@ -1,0 +1,72 @@
+    1  sudo apt-get update && apt-get upgrade
+    2  sudo apt-get upgrade
+    3  sudo apt-get install apache2 php5 libapache2-mod-php5
+    4  ls
+    5  cd /
+    6  ls
+    7  cd /var/www/html/
+    8  ls
+    9  nano index.html 
+   10  cd /
+   11  cd ..
+   12  cd home/
+   13  ls
+   14  cd maxmuthomi/
+   15  ls
+   16  cd ../ujb
+   17  cd ../ubuntu/
+   18  ls
+   19  cd ~
+   20  sudo apt-get update 
+   21  sudo apt-get upgrade
+   22  sudo apt-get autoremove
+   23  cd ..
+   24  cd /var/www//html/
+   25  ls
+   26  suco mkdir
+   27  sudo mkdir max
+   28  sudo apt-get upgrade
+   29  history
+   30  su
+   31  ls
+   32  history
+   33  restart
+   34  sudo restart
+   35  ls
+   36  cd FlaskMail/
+   37  ls
+   38  source venv/bin/activate
+   39  gunicon -w 3 app:app
+   40  pip3 install gunicorn
+   41  python3 app.py 
+   42  sudo gunicorn -w 3 app:app
+   43  gunicorn app:app
+   44  sudo apt install supervisor
+   45  sudo nano /etc/supervisor/conf.d/
+   46  sudo nano /etc/supervisor/conf.d/flask.conf
+   47  cd ~
+   48  sudo mkdir -p /var/log/flaskapp
+   49  sudo touch /var/log/flaskapp/flaskapp.err.log
+   50  sudo touch /var/log/flaskapp/flaskapp.out.log
+   51  sudo supervisorctl reload
+   52  sudo gunicorn -w 3 app:app
+   53  sudo gunicorn app:app
+   54  gunicorn app:app
+   55  sudo nano /etc/supervisor/conf.d/flask.conf
+   56  sudo supervisorctl reload
+   57  cd FlaskMail/
+   58  ls
+   59  sudo supervisorctl reload
+   60  gunicorn app:app
+   61  ls
+   62  cd FlaskMail/
+   63  ls
+   64  stmp
+   65  ls
+   66  fg
+   67  htop
+   68  top
+   69  cd FlaskMail/
+   70  ls
+   71  ls 
+   72  history >> history.txt
