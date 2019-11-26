@@ -1,0 +1,50 @@
+{% extends "structure.html" %}
+
+{% block body %}
+
+<div class="my-table">
+    <table class="table table-sm table-dark table-hover">
+        <thead>
+            {% include "includes/_searchBar.html"%}
+        </thead>
+        <thead class="thead-dark">
+            <th>Wallet Number</th>
+            <th>Phone Number</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Call Back</th>
+            <th>View</th>
+        </thead>
+        
+        {% for row in rows%}
+        {% if row[errorMessage] %}
+        <h1>this is an errot</h1>
+        <tr>
+            
+            <td>{{row["walletAccountNo"]}}</td>
+            <td>{{row["phoneNo"]}}</td>
+            <td>{{row["amount"]}}</td>
+            <td>{{row["date"]}}</td>
+            <td>{{row["url"]}}</td>
+        
+            <td>
+                <a href="">More</a>
+            </td>
+        </tr>
+
+        {% endif%}
+        
+        {% endfor%}
+    </table>
+    {% if error %}
+
+    <div class="alert alert-danger alert-dismissible fade show">
+        <strong>Warning!</strong> {{ error }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    <br>
+    {% endif %}
+</div>
+
+
+{% endblock body %}
