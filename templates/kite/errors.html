@@ -8,31 +8,22 @@
             {% include "includes/_searchBar.html"%}
         </thead>
         <thead class="thead-dark">
-            <th>Wallet Number</th>
-            <th>Phone Number</th>
-            <th>Amount</th>
+            <th>ID</th>
+            <th>Request Id</th>
+            <th>Error Code</th>
+            <th>Error Message</th>
             <th>Date</th>
-            <th>Call Back</th>
-            <th>View</th>
         </thead>
         
         {% for row in rows%}
-        {% if row[errorMessage] %}
-        <h1>this is an errot</h1>
         <tr>
-            
-            <td>{{row["walletAccountNo"]}}</td>
-            <td>{{row["phoneNo"]}}</td>
-            <td>{{row["amount"]}}</td>
+            <td>{{row["_id"]}}</td>
+            <td>{{row["requestId"]}}</td>
+            <td>{{row["responseBody"]["errorCode"]}}</td>
+            <td>{{row["responseBody"]["errorMessage"]}}</td>
             <td>{{row["date"]}}</td>
-            <td>{{row["url"]}}</td>
-        
-            <td>
-                <a href="">More</a>
-            </td>
-        </tr>
 
-        {% endif%}
+        </tr>
         
         {% endfor%}
     </table>

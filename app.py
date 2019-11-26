@@ -19,15 +19,15 @@ app.config.update(
 def Tiles(tile):
     if tile == "Requests":
         return redirect("/kite")
-    elif tile == "Responces":
-        return redirect ("/responces")
+    elif tile == "Errors":
+        return redirect ("/errors")
     elif tile == "Raw":
         return redirect ("/raw")
     else:
         return "{}".format(tile)
 
 
-tiles = ["Responces", "Raw", "Requests"]
+tiles = ["Errors", "Raw", "Requests"]
 
 
 @app.route("/home")
@@ -40,10 +40,10 @@ def Kite():
     rows = data.DashData()
     return render_template("/kite/home.html", rows = rows)
 
-@app.route("/responces")
-def Responces():
-    rows = data.Responces()
-    return render_template("/kite/responces.html", rows = rows)
+@app.route("/errors")
+def Errors():
+    rows = data.ErrorResponses()
+    return render_template("/kite/errors.html", rows = rows)
 
 @app.route("/raw")
 def Raw():
