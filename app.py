@@ -23,12 +23,12 @@ mail = Mail(app)
 @app.route("/send_mail")
 def SendMail():
     try:
-        msg = Message("Hello there From Max?",
+        msg = Message("Hey? This is a Test",
         sender = "anonymaxdashone@gmail.com",
-        recipients = ["max.sendeyo@kiteholdings.biz"])
-        msg.body = "Yo! How are you Idiot?"
+        recipients = ["maxmuthomi@gmail.com"])
+        msg.body = "Yo! This should be awesome"
         mail.send(msg)
-        return "Woow you did it"
+        return "<html><h1>Hopefully that has been sent</h1></html>"
     except Exception as e:
         return e
 
