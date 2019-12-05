@@ -26,7 +26,5 @@ def ErrorResponses():
         except:
             pass
     return errors
-    
 
-print(ErrorResponses())
     

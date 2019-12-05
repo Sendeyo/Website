@@ -2,14 +2,35 @@ from flask import Flask, render_template, request, url_for, redirect, session
 import os
 from passlib.hash import sha256_crypt
 import data
+from flask_mail import Mail, Message
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-
+# configure server to send emails
 app.config.update(
-    DEBUG=True,
-)
+	DEBUG=True,
+	#EMAIL SETTINGS
+	MAIL_SERVER='smtp.gmail.com',
+	MAIL_PORT=465,
+	MAIL_USE_SSL=True,
+	MAIL_USERNAME = 'anonymaxdashone@gmail.com',
+	MAIL_PASSWORD = '17571757'
+	)
+mail = Mail(app)
+
+@app.route("/send_mail")
+def SendMail():
+    try:
+        msg = Message("Hello there From Max?",
+        sender = "anonymaxdashone@gmail.com",
+        recipients = ["max.sendeyo@kiteholdings.biz"])
+        msg.body = "Yo! How are you Idiot?"
+        mail.send(msg)
+        return "Woow you did it"
+    except Exception as e:
+        return e
 
 
 
@@ -23,11 +44,13 @@ def Tiles(tile):
         return redirect ("/errors")
     elif tile == "Raw":
         return redirect ("/raw")
+    elif tile == "Send Email":
+        return redirect ("/send_mail")
     else:
         return "{}".format(tile)
 
 
-tiles = ["Errors", "Raw", "Requests"]
+tiles = ["Send Email", "Errors", "Raw", "Requests"]
 
 
 @app.route("/home")
